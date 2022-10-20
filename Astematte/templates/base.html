@@ -7,14 +7,54 @@
         <meta property="og:title" content="META TITOLO" />
         <meta name="description" content="META DESCRIZIONE.">
         <meta property="og:image" content="META LOGO" />
-        <title>Elefos</title>
+        <title>CrazyCoin</title>
         <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap/css/bootstrap.min.css" %}'/>
         <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'/>
         <script src='{% static "js/jquery/jquery.js" %}'></script>
     </head>
     <body>
 
-        <h1>Hello</h1>
+        <nav class="navbar py-3 navbar-expand-lg bg-light">
+            <div class="container">
+              <a class="navbar-brand" href="#">CrazyCoin</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Aste attive</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Aste concluse</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Recensioni</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Come partecipare</a>
+                  </li>
+                </ul>
+                <div>
+                    {% if request.user.is_authenticated %}
+                        <div>{{request.user}} {{request.user.coin}}</div>
+                    {% else %}
+                        <div class="d-flex flex-row">
+                            <div class="p-2">
+                                <button class="btn btn-primary">Login</button>
+                            </div>
+                            <div class="p-2">
+                                <button class="btn btn-primary">Registrati</button>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+              </div>
+            </div>
+        </nav>
+
+
+
         {% block content %}
         {% endblock content %}
 

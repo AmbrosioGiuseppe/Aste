@@ -1,0 +1,22 @@
+/* ROOT */
+
+:root {
+    --general-font-family: 'Open Sans' !important;
+}
+
+* {
+    font-family: var(--general-font-family);
+}
+
+
+/*FINE ROOT */
+
+
+/* VARIABILI */
+
+.active {
+    font-weight: bold;
+}
+
+
+/* FINE VARIABILI */
